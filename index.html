@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>vue-demo</title>
+  </head>
+  <body>
+    <div id="app">
+      <p>{{title}}</p>
+      <p v-if='showSub'>{{subTitle}}</p>
+      <div>
+        <input @keyup.enter="handleClick" type="text" v-model="mytodo">
+        <button @click="handleClick">添加</button>
+        <button @click="clean">清理</button>
+      </div>
+      <ul>
+        <li :class="{'done':todo.done}" @click="toggle(index)" v-for='(todo,index) in todos'>{{index+1}}:{{todo.text}}</li>
+      </ul>
+      <p>{{remain}}/{{todos.length}}</p>
+    </div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
